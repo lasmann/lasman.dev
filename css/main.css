@@ -187,6 +187,11 @@ section:last-child {
 	padding-bottom: 6rem;
 }
 
+.page-width {
+  max-width: 500px;
+  width: 100%;
+}
+
 
 /* Bordered */
 .bordered section {
@@ -226,7 +231,7 @@ section:last-child {
 /* Template navigation */
 
 .template-navigation {
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .template-navigation li {
