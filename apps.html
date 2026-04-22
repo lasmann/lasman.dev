@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+  <script>
+    const p = new URLSearchParams(location.search);
+    const host = p.get('host');
+    const shop = p.get('shop');
+
+    if (host) {
+      // host = base64("admin.shopify.com/store/your-store") — most reliable
+      location.replace('https://' + atob(host) + '/discounts');
+    } else if (shop) {
+      // fallback: build from shop domain
+      const slug = shop.replace('.myshopify.com', '');
+      location.replace('https://admin.shopify.com/store/' + slug + '/discounts');
+    } else {
+      document.body.innerHTML = '<p>This app is configured within the Shopify admin.</p>';
+    }
+  </script>
+</head>
+<body>Redirecting to Shopify admin…</body>
+</html>
